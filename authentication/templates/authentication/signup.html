@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    {% for message in messages %}
+    <div class="alert alert-{{ messages.tags }} alert-dismissed fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismisse="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+
+     <h3>Signup</h3>
+     <form action="" method="post">
+       {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" placeholder="create a username here." required>
+        <br>
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" id="fname" required>
+        <br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" id="lname" required>
+        <br>
+
+        <label for="email">email:</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+
+        <label for="pass1">Password:</label>
+        <input type="password" name="pass1" id="pass1" placeholder="create a password here." required>
+        <br>
+
+        <label for="pass2">Password:</label>
+        <input type="password" name="pass2" id="pass2" placeholder="Confirm password here." required>
+        <br>
+
+
+
+        <button type="submit" >Signup</button>
+
+
+    </form>
+</body>
+</html>
